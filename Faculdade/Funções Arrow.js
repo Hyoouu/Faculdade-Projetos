@@ -1,4 +1,4 @@
-// Arrow Functins
+// Arrow Functions
 
 
 // Exemplo básico de uma arrow function que soma dois números
