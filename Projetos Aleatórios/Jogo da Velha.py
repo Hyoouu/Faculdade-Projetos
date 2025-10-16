@@ -30,7 +30,7 @@ while True:
      if matriz[linha2][coluna2] == "X" or matriz[linha2][coluna2] == "O": 
          print("Posição já ocupada, tente novamente.")
          continue
-     if matriz[linha2][coluna2] == '':
+     elif matriz[linha2][coluna2] == '':
          matriz[linha2][coluna2] = "O"
          for linha in matriz:
              print(linha)
