@@ -3,5 +3,8 @@ while True:
     ano_preferencia = int(input("Digite o ano que você quer saber sua idade: "))
     idade_correspondente = ano_preferencia - ano_nascimento
 
-    print(f"Sua idade no ano escolhido será: {idade_correspondente} anos.")
+    if idade_correspondente < 0 :
+        print("Erro: O ano de de idade estimada deve ser maior que o ano de nascimento.") 
+    else:
+        print(f"Sua idade no ano escolhido será: {idade_correspondente} anos.")
 
