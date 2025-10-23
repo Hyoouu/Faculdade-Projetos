@@ -1,1 +1,1 @@
-Projetos e Aprendiza Faculdade
+Projetos e Aprendizado Faculdade

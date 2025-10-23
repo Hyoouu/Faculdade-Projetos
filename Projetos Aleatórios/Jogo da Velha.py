@@ -5,6 +5,7 @@ for linha in matriz:
     print(linha)
 
 while True:
+
     while True:
      linha = int(input("Digite a linha(de 0 a 2): "))
      coluna = int(input("Digite a coluna(de 0 a 2): "))
@@ -21,7 +22,31 @@ while True:
     if matriz[0][0] == "X" and matriz[0][1] == "X" and matriz[0][2] == "X" :
           print("Você venceu!")
           break
-    
+    elif matriz[1][0] == "X" and matriz[1][1] == "X" and matriz[1][2] == "X":
+          print("Você venceu!")
+          break
+    elif matriz[2][0] == "X" and matriz[2][1] == "X" and matriz[2][2] == "X":
+          print("Você venceu!")
+          break
+    elif matriz[0][0] == "X" and matriz[1][0] == "X" and matriz[2][0] == "X":
+          print("Você venceu!")
+          break
+    elif matriz[0][1] == "X" and matriz[1][1] == "X" and matriz[2][1] == "X":
+          print("Você venceu!")
+          break
+    elif matriz[0][2] == "X" and matriz[1][2] == "X" and matriz[2][2] == "X":
+          print("Você venceu!")
+          break
+    elif matriz[0][0] == "X" and matriz[1][1] == "X" and matriz[2][2] == "X":
+          print("Você venceu!")
+          break
+    elif matriz[0][2] == "X" and matriz[1][1] == "X" and matriz[2][0] == "X":
+          print("Você venceu!")
+          break
+    elif all(matriz[linha][coluna] != '' for linha in range(3) for coluna in range(3)):
+        print("Deu Velha!")
+        break
+
     while True:
      linha2 = random.randint(0, 2)
      coluna2 = random.randint(0, 2)
@@ -35,8 +60,32 @@ while True:
          for linha in matriz:
              print(linha)
          break
-     
-     if matriz[0][0] == "X" and matriz[0][1] == "X" and matriz[0][2] == "X" :
-          print("Você venceu!")
+
+    if matriz[0][0] == "O" and matriz[0][1] == "O" and matriz[0][2] == "O":
+         print("Você perdeu!")
+         break
+    elif matriz[1][0] == "O" and matriz[1][1] == "O" and matriz[1][2] == "O":
+          print("Você perdeu!")
           break
-    
+    elif matriz[2][0] == "O" and matriz[2][1] == "O" and matriz[2][2] == "O":
+          print("Você perdeu!")
+          break
+    elif matriz[0][0] == "O" and matriz[1][0] == "O" and matriz[2][0] == "O":
+          print("Você perdeu!")
+          break
+    elif matriz[0][1] == "O" and matriz[1][1] == "O" and matriz[2][1] == "O":
+          print("Você perdeu!")
+          break
+    elif matriz[0][2] == "O" and matriz[1][2] == "O" and matriz[2][2] == "O":
+          print("Você perdeu!")
+          break
+    elif matriz[0][0] == "O" and matriz[1][1] == "O" and matriz[2][2] == "O":
+          print("Você perdeu!")
+          break
+    elif matriz[0][2] == "O" and matriz[1][1] == "O" and matriz[2][0] == "O":
+          print("Você perdeu!")
+          break
+    elif all(matriz[linha][coluna] != '' for linha in range(3) for coluna in range(3)):
+        print("Deu Velha!")
+        break
+     
