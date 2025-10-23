@@ -7,8 +7,12 @@ for linha in matriz:
 while True:
 
     while True:
-     linha = int(input("Digite a linha(de 0 a 2): "))
-     coluna = int(input("Digite a coluna(de 0 a 2): "))
+     try:
+      linha = int(input("Digite a linha(de 0 a 2): "))
+      coluna = int(input("Digite a coluna(de 0 a 2): "))
+     except ValueError:
+        print("Valor inválido, tente novamente.")
+        continue
      if linha <0 or linha >2 or coluna <0 or coluna >2 :
          print("Valor inválido, tente novamente.")
          continue
@@ -50,8 +54,6 @@ while True:
     while True:
      linha2 = random.randint(0, 2)
      coluna2 = random.randint(0, 2)
-     if linha2 <0 or linha2 >2 or coluna2 <0 or coluna2 >2 :
-         print("Valor inválido, tente novamente.")
      if matriz[linha2][coluna2] == "X" or matriz[linha2][coluna2] == "O": 
          print("Posição já ocupada, tente novamente.")
          continue
