@@ -4,9 +4,10 @@ matriz = [['' for _ in range(3)] for _ in range(3)]
 for linha in matriz: 
     print(linha)
 
+
+
 while True:
- 
- if random.randint(0, 1 ) == 0:
+    
     while True:
      try:
       linha = int(input("Digite a linha(de 0 a 2): "))
@@ -37,7 +38,7 @@ while True:
     elif all(matriz[linha][coluna] != '' for linha in range(3) for coluna in range(3)):
         print("Deu Velha!")
         break
- else:
+    
     while True:
      linha2 = random.randint(0, 2)
      coluna2 = random.randint(0, 2)
