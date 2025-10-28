@@ -57,7 +57,6 @@ while True:
             print("----------------\nVez do Computador!\n----------------")
 
             while True:
-                s = x 
                 linha2 = random.randint(0, 2)
                 coluna2 = random.randint(0, 2)
                 if matriz[linha2][coluna2] == "X" or matriz[linha2][coluna2] == "O":
