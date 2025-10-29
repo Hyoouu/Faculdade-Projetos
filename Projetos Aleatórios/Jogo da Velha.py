@@ -29,8 +29,7 @@ def verificar_vitoria(simbolo):
     return False
 
 def verificar_velha():
-        if all(matriz[i][j] != '' for i in range(3) for j in range(3)):
-            return True
+    return all(matriz[i][j] != '' for i in range(3) for j in range(3))
 
 print(f"{'-'*10}\nInício do Jogo!\n{'-'*10}")
 for linha in matriz:
@@ -102,11 +101,11 @@ while True:
 
         if turno % 2 == 0:
             rodada += 1
-            print(f"{'-'*10}\nRodada {rodada}")
+            if not fim_jogo:
+                print(f"{'-'*10}\nRodada {rodada}")
 
     # ...código do modo Jogador vs Jogador...
     elif modo == 2:
-        pass
         turno += 1
         print(f"{'-' * 10}\nTurno {turno}")
 
@@ -122,13 +121,17 @@ while True:
                 if linha < 0 or linha > 2 or coluna < 0 or coluna > 2:
                     print("Valor inválido, tente novamente.")
                     continue
+                if matriz[linha][coluna] == "X" or matriz[linha][coluna] == "O":
+                    print(f"{'-'*10}\nPosição já ocupada, tente novamente.")
+                    continue
                 elif matriz[linha][coluna] == '':
                     matriz[linha][coluna] = "X"
                     for linha in matriz:
                         print(linha)
-                    if verificar_vitoria("X") :
-                        print(f"{'-'*10}\nVocê venceu em {rodada} rodadas!")
+                    if verificar_vitoria("X"):
+                        print(f"{'-'*10}\nJogador 1 venceu em {rodada} rodadas!")
                         fim_jogo = True
+                        break
                     if verificar_velha():
                         print(f"{'-'*10}\nDeu Velha!")
                         fim_jogo = True
@@ -150,14 +153,16 @@ while True:
                     print("Valor inválido, tente novamente.")
                     continue
                 if matriz[linha2][coluna2] == "X" or matriz[linha2][coluna2] == "O":
-                    print("Posição já ocupada, tente novamente.")
+                    print(f"{'-'*10}\nPosição já ocupada, tente novamente.")
+                    continue
                 elif matriz[linha2][coluna2] == '':
                     matriz[linha2][coluna2] = "O"
                     for linha in matriz:
                         print(linha)
-                    if verificar_vitoria("O") :
-                        print(f"{'-'*10}\nVocê venceu em {rodada} rodadas!")
+                    if verificar_vitoria("O"):
+                        print(f"{'-'*10}\nJogador 2 venceu em {rodada} rodadas!")
                         fim_jogo = True
+                        break
                     if verificar_velha():
                         print(f"{'-'*10}\nDeu Velha!")
                         fim_jogo = True
